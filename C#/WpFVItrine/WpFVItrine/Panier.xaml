@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpFVItrine.Panier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:resx="clr-namespace:WpFVItrine"
+        Title="Panier" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="12*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="Produits" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{x:Static resx:Resource1.Nom}" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="{x:Static resx:Resource1.Prix}" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="Rajouter" Width="70"></GridViewColumn>
+                    <GridViewColumn Header="Enlever" Width="70"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Payer" HorizontalAlignment="Left" Margin="220,0,-0.4,0" VerticalAlignment="Top" Width="74" Height="20"/>
+    </Grid>
+</Window>
