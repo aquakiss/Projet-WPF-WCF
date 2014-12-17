@@ -1,0 +1,7 @@
+/appli/bin
+/**/bin/*
+/**/Debug/*
+/**/obj/*
+/**/*.suo
+/**/*.vssscc
+/**/*.user
