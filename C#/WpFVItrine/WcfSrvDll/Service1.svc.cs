@@ -16,11 +16,11 @@ namespace WcfSrvDll
        public static List<Article> liste = new List<Article>();
         static Service1()
         {
-            liste.Add(new Article("nom", 1, 2, "d", "r"));
-            liste.Add(new Article("nom", 2, 3, "de", "re"));
-            liste.Add(new Article("nom", 3, 4, "des", "res"));
-            liste.Add(new Article("nom", 4, 5, "desc", "resu"));
-            liste.Add(new Article("nom", 5, 6, "descr", "resum")); 
+            liste.Add(new Article() { Nom = "Oblivion", Prix = 24, Quantite = 2, Description = "Action SF", Resume = "Aventure futurisque de Jack Harper(Tom Cruise)" });
+            liste.Add(new Article() { Nom = "Zombiland", Prix = 16, Quantite = 1, Description = "Action Zombie Humour", Resume = "Bienvenu à Zombiland" });
+            liste.Add(new Article() { Nom = "The Watchmen - Les justiciers", Prix = 18, Quantite = 5, Description = "Action Fantastique", Resume = "L'univers de DC" });
+            liste.Add(new Article() { Nom = "Sins City - J'ai tué pour elle", Prix = 29, Quantite = 10, Description = "Action Polar", Resume = "Sins" });
+            liste.Add(new Article() { Nom = "L'Age de glace", Prix = 10, Quantite = 3, Description = "Humour Anime", Resume = "Suivé les fole aventure de" });
         }
 
         public string GetData(int value)

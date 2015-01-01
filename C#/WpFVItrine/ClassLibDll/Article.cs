@@ -13,15 +13,15 @@ namespace ClassLibDll
     public class Article
     {
         [DataMember]
-        private string Nom { get; set; }
+        public string Nom { get; set; }
         [DataMember]
-        private int Prix { get; set; }
+        public int Prix { get; set; }
         [DataMember]
-        private int Quantite { get; set; }
+        public int Quantite { get; set; }
         [DataMember]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [DataMember]
-        private string Resume { get; set; }
+        public string Resume { get; set; }
        
         public Article(string n, int p, int q, string d, string r)
         {
@@ -30,6 +30,11 @@ namespace ClassLibDll
             this.Quantite = q;
             this.Description = d;
             this.Resume = r;
+        }
+
+        public Article()
+        {
+            // TODO: Complete member initialization
         }
     }
 }

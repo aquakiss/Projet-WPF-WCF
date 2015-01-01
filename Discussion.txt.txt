@@ -1,0 +1,9 @@
+Ici on met ou on en est.
+- fait page de co à vitrine
+
+RESTE :
+liste article 
+ajout au panier
+modifier nb article
+enlever du panier
+page panier

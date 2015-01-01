@@ -20,16 +20,17 @@ namespace WpFVItrine
     /// </summary>
     public partial class Window1 : Window
     {
+        Article[] ListeArticle;
         public Window1(string id)
         {
             InitializeComponent();
             Token.Text = id;
-            Article[] ListeArticle;
+            
             using(Service.Service1Client client = new Service.Service1Client())
             {
                 ListeArticle = client.getListArticle();
-            } 
-          
+            }
+            Produits.ItemsSource = ListeArticle;
         }
     }
 }
