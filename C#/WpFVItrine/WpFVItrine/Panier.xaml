@@ -45,7 +45,7 @@
         </ListView>
         <TextBlock HorizontalAlignment="Left" Margin="10,2,10,10" TextWrapping="Wrap" Text="User :" VerticalAlignment="Top" Height="21" Width="39"/>
         <Button Content="Payer" HorizontalAlignment="Left" Margin="200,0,10,1" Width="80" />
-        <Button Content="Retour" HorizontalAlignment="Left" Margin="290,0,10,1" Width="80" />
+        <Button Content="Retour" HorizontalAlignment="Left" Margin="290,0,10,1" Width="80" Click="Return_Click"/>
         <TextBlock x:Name="Token"  HorizontalAlignment="Left" Margin="44,2,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="69" Grid.RowSpan="2"/>
     </Grid>
 </Window>
