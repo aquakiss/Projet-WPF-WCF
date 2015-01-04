@@ -13,7 +13,12 @@ namespace ClassLibDll
         [DataMember]
         public List<Article> listePanier = new List<Article>();
         [DataMember]
-        private int token {get; set;}
+        public string token {get; set;}
+
+        public Panier(string t)
+        {
+            this.token = t;
+        }
        
         public void ajouter(Article article)
         {

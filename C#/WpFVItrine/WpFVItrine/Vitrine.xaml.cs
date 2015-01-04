@@ -45,7 +45,7 @@ namespace WpFVItrine
             }
 
         }
-        private void AddToPanier_Click(object sender, RoutedEventArgs e)
+        private void AddToPanier_Click(object sender, RoutedEventArgs e, Article produit, string id)
         {
             using (Service.Service1Client client = new Service.Service1Client())
             {
@@ -59,5 +59,7 @@ namespace WpFVItrine
             this.Close();
             window.ShowDialog();
         }
+
+
     }
 }
