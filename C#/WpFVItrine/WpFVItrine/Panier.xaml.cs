@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,17 +21,37 @@ namespace WpFVItrine
     /// </summary>
     public partial class Panier : Window
     {
-        object[] ListeArticle;
+        public ObservableCollection<object> ElPanier = new ObservableCollection<object>();
+        object[] Listelem;
         public Panier(string tok)
         {
             InitializeComponent();
             Token.Text = tok;
 
-            using (Service.Service1Client clientone = new Service.Service1Client())
+            using (Service.Service1Client client = new Service.Service1Client())
             {
-                ListeArticle = clientone.getListArticle();
+                Listelem = client.getPanier(Token.Text);
             }
-            Paniers.ItemsSource = ListeArticle;
+            for (int i = 0; i < Listelem.Length; i++)
+            {
+                ElPanier.Add(Listelem[i]);
+            }
+            Paniers.ItemsSource = ElPanier;
+        }
+
+        private void AjoutPlus_Click(object sender, RoutedEventArgs e)
+        {
+            //ElPanier.Quantite
+        }
+
+        private void Retirer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MoinsQt_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

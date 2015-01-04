@@ -26,6 +26,12 @@
   <wsdl:message name="IService1_getListArticle_OutputMessage">
     <wsdl:part name="parameters" element="tns:getListArticleResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getPanier_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPanier" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getPanier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPanierResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ElemAddInPani_InputMessage">
     <wsdl:part name="parameters" element="tns:ElemAddInPani" />
   </wsdl:message>
@@ -50,6 +56,10 @@
     <wsdl:operation name="getListArticle">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getListArticle" message="tns:IService1_getListArticle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getListArticleResponse" message="tns:IService1_getListArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPanier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getPanier" message="tns:IService1_getPanier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getPanierResponse" message="tns:IService1_getPanier_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ElemAddInPani">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ElemAddInPani" message="tns:IService1_ElemAddInPani_InputMessage" />
@@ -82,6 +92,15 @@
     </wsdl:operation>
     <wsdl:operation name="getListArticle">
       <soap:operation soapAction="http://tempuri.org/IService1/getListArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPanier">
+      <soap:operation soapAction="http://tempuri.org/IService1/getPanier" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

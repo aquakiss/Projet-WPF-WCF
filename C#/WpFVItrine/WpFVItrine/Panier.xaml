@@ -10,25 +10,33 @@
             <RowDefinition Height="12*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="Paniers" Grid.Row="1">
+        <ListView x:Name="Paniers" ItemsSource="{Binding ElPanier}" Grid.Row="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="{x:Static resx:Resource1.Nom}" Width="80"></GridViewColumn>
-                    <GridViewColumn Header="{x:Static resx:Resource1.Prix}" Width="80"></GridViewColumn>
-                    <GridViewColumn Header="{x:Static resx:Resource1.Disponibitlite}" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Rajouter" Width="70"></GridViewColumn>
-                    <GridViewColumn Header="Enlever" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nom}" Header="{x:Static resx:Resource1.Nom}" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prix}" Header="{x:Static resx:Resource1.Prix}" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Quantite}" Header="{x:Static resx:Resource1.Disponibitlite}" Width="60"></GridViewColumn>
+                    <GridViewColumn Header="Rajouter" Width="60"></GridViewColumn>
+                    <GridViewColumn Header="Enlever" Width="60"></GridViewColumn>
+                    <GridViewColumn Header="Retirer" Width="70"></GridViewColumn>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="+"></Button>                            
+                                <Button Content="+" Click="AjoutPlus_Click"></Button>                            
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="-"></Button>
+                                <Button Content="-" Click="MoinsQt_Click" ></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="X" Click="Retirer_Click"></Button>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

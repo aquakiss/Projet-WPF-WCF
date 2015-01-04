@@ -126,6 +126,7 @@
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\DataSources\ClassLibDll.Article.datasource" />
+    <None Include="Properties\DataSources\ClassLibDll.Panier.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

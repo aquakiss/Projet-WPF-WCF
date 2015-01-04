@@ -24,6 +24,9 @@ namespace WcfSrvDll
         List<Article> getListArticle();
 
         [OperationContract]
+        List<Article> getPanier(string token);
+
+        [OperationContract]
         void ElemAddInPani(Article produit, string id);
 
         [OperationContract]

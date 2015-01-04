@@ -61,9 +61,16 @@ namespace WcfSrvDll
             return liste;
         }
 
-        public List<Panier> getPanier()
+        public List<Article> getPanier(string tok)
         {
-            return paniers;
+            foreach (Panier item in paniers)
+            {
+                if (item.token == tok)
+                {
+                    return item.listePanier;   
+                }
+            }
+            return new List<Article>();
         }
 
         public void ElemAddInPani(Article prod, string id)

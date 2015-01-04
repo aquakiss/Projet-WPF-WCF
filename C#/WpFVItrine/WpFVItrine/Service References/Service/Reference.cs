@@ -96,6 +96,12 @@ namespace WpFVItrine.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getListArticle", ReplyAction="http://tempuri.org/IService1/getListArticleResponse")]
         System.Threading.Tasks.Task<ClassLibDll.Article[]> getListArticleAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPanier", ReplyAction="http://tempuri.org/IService1/getPanierResponse")]
+        ClassLibDll.Article[] getPanier(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getPanier", ReplyAction="http://tempuri.org/IService1/getPanierResponse")]
+        System.Threading.Tasks.Task<ClassLibDll.Article[]> getPanierAsync(string token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ElemAddInPani", ReplyAction="http://tempuri.org/IService1/ElemAddInPaniResponse")]
         void ElemAddInPani(ClassLibDll.Article produit, string id);
         
@@ -158,6 +164,14 @@ namespace WpFVItrine.Service {
         
         public System.Threading.Tasks.Task<ClassLibDll.Article[]> getListArticleAsync() {
             return base.Channel.getListArticleAsync();
+        }
+        
+        public ClassLibDll.Article[] getPanier(string token) {
+            return base.Channel.getPanier(token);
+        }
+        
+        public System.Threading.Tasks.Task<ClassLibDll.Article[]> getPanierAsync(string token) {
+            return base.Channel.getPanierAsync(token);
         }
         
         public void ElemAddInPani(ClassLibDll.Article produit, string id) {
