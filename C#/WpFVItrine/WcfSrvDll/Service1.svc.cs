@@ -61,9 +61,32 @@ namespace WcfSrvDll
             return liste;
         }
 
-        public void ElemAddInPani()
+        public void ElemAddInPani(Article produit, string id)
         {
-            //userPani.ajouter();
+            //récupérer le panier
+            bool existArticle = false;
+            foreach (Panier p in paniers)
+            {
+                if (p.token == id)
+                {
+                    //verifier que le produit est pas déjà dans le panier
+                    foreach (Article a in p.listePanier)
+                    {
+                        if (a.Nom == produit.Nom)
+                        {
+                            a.Quantite++;
+                            existArticle = true;
+                            break;
+                        }
+                    }
+                    if (existArticle == false)
+                    {
+                        Article prod = new Article() { Nom = produit.Nom, Prix = produit.Prix, Quantite = 1, Description = produit.Description, Resume = produit.Resume };
+                        p.ajouter(prod);
+                    }
+                    break;
+                }
+            }
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

@@ -24,6 +24,9 @@ namespace WcfSrvDll
         List<Article> getListArticle();
 
         [OperationContract]
+        void ElemAddInPani(Article produit, string id);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: ajoutez vos opérations de service ici
