@@ -87,19 +87,56 @@ namespace WcfSrvDll
                     {
                         if (a.Nom == prod.Nom)
                         {
-                            a.Quantite++;
-                            existArticle = true;
+                            if(prod.Quantite > 0)
+                            {                          
+                                a.Quantite++;
+                                foreach (Article art in liste)
+                                {
+                                    if (prod.Nom == art.Nom)
+                                    {
+                                        art.Quantite--;
+                                        break;
+                                    }
+                                }
+                                existArticle = true;
+                            }
                             break;
                         }
                     }
                     if (existArticle == false)
                     {
-                        Article produ = new Article() { Nom = prod.Nom, Prix = prod.Prix, Quantite = 1, Description = prod.Description, Resume = prod.Resume };
-                        p.ajouter(prod);
+                        if (prod.Quantite > 0)
+                        {
+                            foreach (Article art in liste)
+                            {
+                                if (prod.Nom == art.Nom)
+                                {
+                                    art.Quantite--;
+                                    break;
+                                }
+                            }
+                            Article produit = new Article() { Nom = prod.Nom, Prix = prod.Prix, Quantite = 1, Description = prod.Description, Resume = prod.Resume };
+                            p.ajouter(produit);
+                        }
                     }
                     break;
                 }
             }
+        }
+
+        public void rajouter(string token)
+        {
+
+        }
+
+        public void enlever(string token)
+        {
+
+        }
+
+        public void retirer(string token)
+        {
+
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
