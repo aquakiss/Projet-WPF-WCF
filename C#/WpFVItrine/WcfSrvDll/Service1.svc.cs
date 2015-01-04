@@ -14,6 +14,9 @@ namespace WcfSrvDll
     public class Service1 : IService1
     {
        public static List<Article> liste = new List<Article>();
+
+       public static List<Panier> paniers = new List<Panier>();
+
         static Service1()
         {
             liste.Add(new Article() { Nom = "Oblivion", Prix = 24, Quantite = 2, Description = "Action SF", Resume = "Aventure futurisque de Jack Harper(Tom Cruise)" });
@@ -30,6 +33,7 @@ namespace WcfSrvDll
 
         public string login(string Nom, string Prenom)
         {
+            bool exist = false;
             User user = new User();
             user.Nom = Nom;
             user.Prenom = Prenom;
@@ -38,6 +42,17 @@ namespace WcfSrvDll
                 user.Admin = true;
             }
             user.ID = Nom + Prenom;
+            foreach (Panier p in paniers)
+            {
+                if (p.token == user.ID)
+                {
+                    exist = true;
+                }
+            }
+            if (exist == false) 
+            {
+                paniers.Add(new Panier(user.ID));
+            }
             return user.ID;
         }
 
@@ -50,9 +65,6 @@ namespace WcfSrvDll
         {
             //userPani.ajouter();
         }
-
-
-
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
