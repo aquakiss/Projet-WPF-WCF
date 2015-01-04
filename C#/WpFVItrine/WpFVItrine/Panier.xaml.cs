@@ -41,17 +41,29 @@ namespace WpFVItrine
 
         private void AjoutPlus_Click(object sender, RoutedEventArgs e)
         {
-            //ElPanier.Quantite
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.rajouter(Token.Text);
+            }           
+            //Refresh
         }
 
         private void Retirer_Click(object sender, RoutedEventArgs e)
         {
-
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.retirer(Token.Text);
+            }
+            //Refresh
         }
 
         private void MoinsQt_Click(object sender, RoutedEventArgs e)
         {
-
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.enlever(Token.Text);
+            }
+            //Refresh
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
