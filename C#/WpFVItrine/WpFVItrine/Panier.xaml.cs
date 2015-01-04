@@ -32,5 +32,12 @@ namespace WpFVItrine
             }
             Paniers.ItemsSource = ListeArticle;
         }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            WpFVItrine.Window1 window = new WpFVItrine.Window1(Token.Text);
+            this.Close();
+            window.ShowDialog();
+        }
     }
 }
