@@ -189,5 +189,20 @@ namespace WpFVItrine.Service {
         public System.Threading.Tasks.Task<WpFVItrine.Service.CompositeType> GetDataUsingDataContractAsync(WpFVItrine.Service.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
+
+        internal void rajouter(string p)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void retirer(string p)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void enlever(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

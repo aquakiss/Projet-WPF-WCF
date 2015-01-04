@@ -30,6 +30,15 @@ namespace WcfSrvDll
         void ElemAddInPani(Article produit, string id);
 
         [OperationContract]
+        void rajouter(string token);
+
+        [OperationContract]
+        void enlever(string token);
+
+        [OperationContract]
+        void retirer(string token);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: ajoutez vos opérations de service ici
