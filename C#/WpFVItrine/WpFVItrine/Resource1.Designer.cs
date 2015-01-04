@@ -61,7 +61,7 @@ namespace WpFVItrine {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Quantités.
+        ///   Recherche une chaîne localisée semblable à Quantités : .
         /// </summary>
         public static string Disponibitlite {
             get {
@@ -70,7 +70,7 @@ namespace WpFVItrine {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Fiche.
+        ///   Recherche une chaîne localisée semblable à Fiche :.
         /// </summary>
         public static string Fiche {
             get {
@@ -79,7 +79,7 @@ namespace WpFVItrine {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Nom.
+        ///   Recherche une chaîne localisée semblable à Nom :.
         /// </summary>
         public static string Nom {
             get {
@@ -97,7 +97,7 @@ namespace WpFVItrine {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Prix.
+        ///   Recherche une chaîne localisée semblable à Prix :.
         /// </summary>
         public static string Prix {
             get {
@@ -106,7 +106,7 @@ namespace WpFVItrine {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Description.
+        ///   Recherche une chaîne localisée semblable à Description :.
         /// </summary>
         public static string Resume {
             get {

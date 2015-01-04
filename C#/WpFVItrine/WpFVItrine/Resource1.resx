@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Disponibitlite" xml:space="preserve">
-    <value>Quantités</value>
+    <value>Quantités : </value>
   </data>
   <data name="Fiche" xml:space="preserve">
-    <value>Fiche</value>
+    <value>Fiche :</value>
   </data>
   <data name="Nom" xml:space="preserve">
-    <value>Nom</value>
+    <value>Nom :</value>
   </data>
   <data name="Panier" xml:space="preserve">
     <value>Panier</value>
   </data>
   <data name="Prix" xml:space="preserve">
-    <value>Prix</value>
+    <value>Prix :</value>
   </data>
   <data name="Resume" xml:space="preserve">
-    <value>Description</value>
+    <value>Description :</value>
   </data>
 </root>

@@ -30,10 +30,11 @@ namespace WpFVItrine
             {
                 ListeArticle = client.getListArticle();
             }
-            foreach (Article produit in ListeArticle)
+            /*foreach (Article produit in ListeArticle)
             {
                 ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
-            }
+            }*/
+            ListeProduits.ItemsSource = ListeArticle;
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
