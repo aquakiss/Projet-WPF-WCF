@@ -25,12 +25,38 @@ namespace WpFVItrine
         {
             InitializeComponent();
             Token.Text = id;
-            
-            using(Service.Service1Client client = new Service.Service1Client())
+
+            using (Service.Service1Client client = new Service.Service1Client())
             {
                 ListeArticle = client.getListArticle();
             }
-            Produits.ItemsSource = ListeArticle;
+            foreach (Article produit in ListeArticle)
+            {
+                ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
+            }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                ListeArticle = client.getListArticle();
+            }
+
+        }
+        private void AddToPanier_Click(object sender, RoutedEventArgs e)
+        {
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                //client.ElemAddInPani();
+            }
+        }
+
+        private void GoToPanier_Click(object sender, RoutedEventArgs e)
+        {
+            WpFVItrine.Panier window = new WpFVItrine.Panier(Token.Text);
+            this.Close();
+            window.ShowDialog();
         }
     }
 }

@@ -19,9 +19,16 @@ namespace WpFVItrine
     /// </summary>
     public partial class Panier : Window
     {
-        public Panier()
+        //Article[] ListeArticle;
+        public Panier(string tok)
         {
             InitializeComponent();
+            Token.Text = tok;
+
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                //ListeArticle = client.getListArticle();
+            }
         }
     }
 }

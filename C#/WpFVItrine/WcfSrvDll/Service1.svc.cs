@@ -46,6 +46,14 @@ namespace WcfSrvDll
             return liste;
         }
 
+        public void ElemAddInPani()
+        {
+            //userPani.ajouter();
+        }
+
+
+
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

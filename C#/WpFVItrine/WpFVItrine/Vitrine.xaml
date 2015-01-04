@@ -10,20 +10,9 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="12*"></RowDefinition>
         </Grid.RowDefinitions>
-
-        <ListView x:Name="Produits" Grid.Row="1">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=ListeArticle[].Nom}" Header="{x:Static resx:Resource1.Nom}" Width="80"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prix}" Header="{x:Static resx:Resource1.Prix}" Width="110"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Quantite}" Header="{x:Static resx:Resource1.Disponibitlite}" Width="90"></GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Header="{x:Static resx:Resource1.Resume}" Width="110"></GridViewColumn>
-                    <GridViewColumn Header="{x:Static resx:Resource1.Panier}" Width="110"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ListBox x:Name="ListeProduits" HorizontalAlignment="Left" Height="271" Margin="0,4.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="518" SelectionChanged="ListBox_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="User :" VerticalAlignment="Top" Height="21" Width="39"/>
-        <Button Content="Panier" HorizontalAlignment="Left" Margin="427,0,0,0" VerticalAlignment="Top" Width="81" Height="22"/>
+        <Button Content="Panier" HorizontalAlignment="Left" Margin="427,0,0,1" Width="81" Click="GoToPanier_Click"/>
         <TextBlock x:Name="Token"  HorizontalAlignment="Left" Margin="44,2,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="69" Grid.RowSpan="2"/>
     </Grid>
 </Window>

@@ -1,9 +1,14 @@
 Ici on met ou on en est.
 - fait page de co à vitrine
+- page vitrine 
+- page panier
+- service p co
 
 RESTE :
-liste article 
+liste article /
 ajout au panier
-modifier nb article
+modifier nb article dans panier
 enlever du panier
-page panier
+fonction pa panier 
+service p vitrine /
+service p panier 
