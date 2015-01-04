@@ -61,9 +61,10 @@ namespace WcfSrvDll
             return liste;
         }
 
-        public void ElemAddInPani(Article produit, string id)
+        public void ElemAddInPani(object produit, string id)
         {
             //récupérer le panier
+            Article prod = produit as Article;
             bool existArticle = false;
             foreach (Panier p in paniers)
             {
@@ -72,7 +73,7 @@ namespace WcfSrvDll
                     //verifier que le produit est pas déjà dans le panier
                     foreach (Article a in p.listePanier)
                     {
-                        if (a.Nom == produit.Nom)
+                        if (a.Nom == prod.Nom)
                         {
                             a.Quantite++;
                             existArticle = true;
@@ -81,7 +82,7 @@ namespace WcfSrvDll
                     }
                     if (existArticle == false)
                     {
-                        Article prod = new Article() { Nom = produit.Nom, Prix = produit.Prix, Quantite = 1, Description = produit.Description, Resume = produit.Resume };
+                        Article produ = new Article() { Nom = prod.Nom, Prix = prod.Prix, Quantite = 1, Description = prod.Description, Resume = prod.Resume };
                         p.ajouter(prod);
                     }
                     break;
