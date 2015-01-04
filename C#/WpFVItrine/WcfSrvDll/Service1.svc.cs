@@ -41,7 +41,14 @@ namespace WcfSrvDll
             {
                 user.Admin = true;
             }
-            user.ID = Nom + Prenom;
+            if (user.Admin != false)
+            {
+                user.ID = Nom + Prenom;
+            }
+            else
+            {
+                user.ID = "Admin007";
+            }
             foreach (Panier p in paniers)
             {
                 if (p.token == user.ID)

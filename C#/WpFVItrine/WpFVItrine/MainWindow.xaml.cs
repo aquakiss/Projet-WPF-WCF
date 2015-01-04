@@ -34,10 +34,19 @@ namespace WpFVItrine
                 using(Service.Service1Client client = new Service.Service1Client())
                 {
                     token = client.login(Nom.Text, Prenom.Text);
-                } 
-                WpFVItrine.Window1 window = new WpFVItrine.Window1(token);
-                this.Close();
-                window.ShowDialog();
+                }
+                if(token == "Admin007")
+                {
+                    WpFVItrine.PAdmin Pagead = new WpFVItrine.PAdmin(token);
+                    this.Close();
+                    Pagead.ShowDialog();
+                }
+                else
+                {
+                    WpFVItrine.Window1 window = new WpFVItrine.Window1(token);
+                    this.Close();
+                    window.ShowDialog();
+                }
             }
         }
     }

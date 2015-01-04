@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpFVItrine.Window1"
+﻿<Window x:Class="WpFVItrine.PAdmin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:resx="clr-namespace:WpFVItrine"        
-        Title="Vitrine" Height="400" Width="525">
+         xmlns:resx="clr-namespace:WpFVItrine"
+      Title="AdminPage" Height="500" Width="535">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="12*"></RowDefinition>
         </Grid.RowDefinitions>
         <ListBox x:Name="ListeProduits" HorizontalAlignment="Left" Height="350" Margin="0,4.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="523" SelectionChanged="ListBox_SelectionChanged">
@@ -21,13 +21,19 @@
                         <TextBlock Text="{Binding Path=Quantite}"/>
                         <TextBlock Text="{x:Static resx:Resource1.Resume}" />
                         <TextBlock Text="{Binding Path=Description}" />
-                        <Button Content="Ajout au Panier" Click="AddToPanier_Click"></Button>
+                        <Button Content="Supprimer" Click="SuppProd_Click"></Button>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Content="Déconnexion" Grid.Row="0" Margin="426,-2,20,0" Width="81" Click="Deconnect_Click" />
         <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="User :" VerticalAlignment="Top" Height="21" Width="39"/>
-        <Button Content="Panier" HorizontalAlignment="Left" Margin="427,0,0,1" Width="81" Click="GoToPanier_Click"/>
+        <Button Content="Créer" HorizontalAlignment="Left" Margin="426,18,0,63" Width="81" Click="AddArticl_Click" Grid.Row="1"/>
         <TextBlock x:Name="Token"  HorizontalAlignment="Left" Margin="44,2,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="69" Grid.RowSpan="2"/>
+        <TextBlock x:Name="Creation"  HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Création d'un nouveau produit" VerticalAlignment="Top" Height="18" Width="142" Grid.Row="1"/>
+        <TextBox x:Name="AdtxBnam" Height="23"  Grid.Row="1"  TextWrapping="Wrap" Text="{x:Static resx:Resource1.Nom}" VerticalAlignment="Top" Width="120" Margin="10,18,387,0"/>
+        <TextBox x:Name="AdtxBpri" Height="23"  Grid.Row="1"  TextWrapping="Wrap" Text="{x:Static resx:Resource1.Prix}" VerticalAlignment="Top" Margin="193,18,270,0"/>
+        <TextBox x:Name="AdtxBqt" Height="23"  Grid.Row="1"  TextWrapping="Wrap" Text="{x:Static resx:Resource1.Disponibitlite}" VerticalAlignment="Top" Margin="278,18,141,0" RenderTransformOrigin="0.19,0.507"/>
+        <TextBox x:Name="AdtxBresum"  Height="48"  Grid.Row="1"  TextWrapping="Wrap" Text="{x:Static resx:Resource1.Resume}" VerticalAlignment="Top" Margin="10,52,26,0"/>
     </Grid>
 </Window>

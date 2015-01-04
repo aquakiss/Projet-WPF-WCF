@@ -3,12 +3,17 @@ Ici on met ou on en est.
 - page vitrine 
 - page panier
 - service p co
-
+- service p vitrine 
+- aff liste article
+- aff article du panier
+- Ajout prod in panier
 RESTE :
-liste article /
-ajout au panier
+ 
+ajout au produit /
+enlever un prod /
+déco (goto accueil) /
+
 modifier nb article dans panier
 enlever du panier
 fonction pa panier 
-service p vitrine /
 service p panier 
