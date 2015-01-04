@@ -97,13 +97,10 @@ namespace WpFVItrine.Service {
         System.Threading.Tasks.Task<ClassLibDll.Article[]> getListArticleAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ElemAddInPani", ReplyAction="http://tempuri.org/IService1/ElemAddInPaniResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ClassLibDll.Article[]))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ClassLibDll.Article))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(WpFVItrine.Service.CompositeType))]
-        void ElemAddInPani(object produit, string id);
+        void ElemAddInPani(ClassLibDll.Article produit, string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ElemAddInPani", ReplyAction="http://tempuri.org/IService1/ElemAddInPaniResponse")]
-        System.Threading.Tasks.Task ElemAddInPaniAsync(object produit, string id);
+        System.Threading.Tasks.Task ElemAddInPaniAsync(ClassLibDll.Article produit, string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         WpFVItrine.Service.CompositeType GetDataUsingDataContract(WpFVItrine.Service.CompositeType composite);
@@ -163,11 +160,11 @@ namespace WpFVItrine.Service {
             return base.Channel.getListArticleAsync();
         }
         
-        public void ElemAddInPani(object produit, string id) {
+        public void ElemAddInPani(ClassLibDll.Article produit, string id) {
             base.Channel.ElemAddInPani(produit, id);
         }
         
-        public System.Threading.Tasks.Task ElemAddInPaniAsync(object produit, string id) {
+        public System.Threading.Tasks.Task ElemAddInPaniAsync(ClassLibDll.Article produit, string id) {
             return base.Channel.ElemAddInPaniAsync(produit, id);
         }
         

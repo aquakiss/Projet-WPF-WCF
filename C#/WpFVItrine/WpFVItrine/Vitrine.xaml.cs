@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpFVItrine.Service;
-//using ClassLibDll;
+using ClassLibDll;
 
 namespace WpFVItrine
 {
@@ -49,7 +49,7 @@ namespace WpFVItrine
         private void AddToPanier_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            object article = button.DataContext;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
                 client.ElemAddInPani(article, Token.Text);

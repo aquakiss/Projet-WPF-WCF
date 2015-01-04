@@ -61,10 +61,15 @@ namespace WcfSrvDll
             return liste;
         }
 
-        public void ElemAddInPani(object produit, string id)
+        public List<Panier> getPanier()
+        {
+            return paniers;
+        }
+
+        public void ElemAddInPani(Article prod, string id)
         {
             //récupérer le panier
-            Article prod = produit as Article;
+            //Article prod = produit as Article;
             bool existArticle = false;
             foreach (Panier p in paniers)
             {
