@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ClassLibDll;
+//using ClassLibDll;
 
 namespace WpFVItrine
 {
@@ -20,7 +20,7 @@ namespace WpFVItrine
     /// </summary>
     public partial class Window1 : Window
     {
-        Article[] ListeArticle;
+        object[] ListeArticle;
         public Window1(string id)
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace WpFVItrine
             }
 
         }
-        private void AddToPanier_Click(object sender, RoutedEventArgs e, Article produit, string id)
+        private void AddToPanier_Click(object sender, RoutedEventArgs e)
         {
             using (Service.Service1Client client = new Service.Service1Client())
             {
@@ -59,7 +59,5 @@ namespace WpFVItrine
             this.Close();
             window.ShowDialog();
         }
-
-
     }
 }

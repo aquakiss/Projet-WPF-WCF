@@ -10,7 +10,7 @@
             <RowDefinition Height="12*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="Produits" Grid.Row="1">
+        <ListView x:Name="Paniers" Grid.Row="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="{x:Static resx:Resource1.Nom}" Width="80"></GridViewColumn>
@@ -18,6 +18,20 @@
                     <GridViewColumn Header="{x:Static resx:Resource1.Disponibitlite}" Width="70"></GridViewColumn>
                     <GridViewColumn Header="Rajouter" Width="70"></GridViewColumn>
                     <GridViewColumn Header="Enlever" Width="70"></GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="+"></Button>                            
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="-"></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

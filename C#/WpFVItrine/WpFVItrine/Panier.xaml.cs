@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+//using ClassLibDll;
 
 namespace WpFVItrine
 {
@@ -19,16 +20,17 @@ namespace WpFVItrine
     /// </summary>
     public partial class Panier : Window
     {
-        //Article[] ListeArticle;
+        object[] ListeArticle;
         public Panier(string tok)
         {
             InitializeComponent();
             Token.Text = tok;
 
-            using (Service.Service1Client client = new Service.Service1Client())
+            using (Service.Service1Client clientone = new Service.Service1Client())
             {
-                //ListeArticle = client.getListArticle();
+                ListeArticle = clientone.getListArticle();
             }
+            Paniers.ItemsSource = ListeArticle;
         }
     }
 }
