@@ -49,7 +49,7 @@ namespace WpFVItrine
         {
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                //client.ElemAddInPani();
+                client.ElemAddInPani(produit, id);
             }
         }
 

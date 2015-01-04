@@ -161,5 +161,10 @@ namespace WpFVItrine.Service {
         public System.Threading.Tasks.Task<WpFVItrine.Service.CompositeType> GetDataUsingDataContractAsync(WpFVItrine.Service.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
+
+        internal void ElemAddInPani(ClassLibDll.Article produit, string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
