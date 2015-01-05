@@ -120,6 +120,12 @@ namespace WpFVItrine.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ElemAddInPani", ReplyAction="http://tempuri.org/IService1/ElemAddInPaniResponse")]
         System.Threading.Tasks.Task ElemAddInPaniAsync(ClassLibDll.Article produit, string id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
+        void SuppProdVit(ClassLibDll.Article article);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
+        System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/rajouter", ReplyAction="http://tempuri.org/IService1/rajouterResponse")]
         void rajouter(string token);
         
@@ -226,6 +232,14 @@ namespace WpFVItrine.Service {
         
         public System.Threading.Tasks.Task ElemAddInPaniAsync(ClassLibDll.Article produit, string id) {
             return base.Channel.ElemAddInPaniAsync(produit, id);
+        }
+        
+        public void SuppProdVit(ClassLibDll.Article article) {
+            base.Channel.SuppProdVit(article);
+        }
+        
+        public System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article) {
+            return base.Channel.SuppProdVitAsync(article);
         }
         
         public void rajouter(string token) {

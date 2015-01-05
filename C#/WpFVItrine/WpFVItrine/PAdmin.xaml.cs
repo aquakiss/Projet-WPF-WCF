@@ -59,7 +59,7 @@ namespace WpFVItrine
             Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                //client.SuppProdVit(article);
+                client.SuppProdVit(article);
             }
         }
 

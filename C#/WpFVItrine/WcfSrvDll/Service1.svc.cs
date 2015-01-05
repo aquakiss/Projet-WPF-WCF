@@ -153,7 +153,14 @@ namespace WcfSrvDll
 
         public void SuppProdVit(Article article)
         {
-
+            foreach (Article item in liste)
+            {
+                if(item.Nom == article.Nom)
+                {
+                    liste.Remove(item);
+                    break;
+                }
+            }
         }
 
         public void rajouter(string token)
