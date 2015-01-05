@@ -12,8 +12,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+<<<<<<< HEAD
 //using ClassLibDll;
 using System.Windows.Threading;
+=======
+using ClassLibDll;
+>>>>>>> 86fb9b46ad7225069b31efb678109f87bf59262e
 
 namespace WpFVItrine
 {
@@ -60,27 +64,33 @@ namespace WpFVItrine
 
         private void AjoutPlus_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.rajouter(Token.Text);
+                client.rajouter(Token.Text, article);
             }           
             //Refresh
         }
 
         private void Retirer_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.retirer(Token.Text);
+                client.retirer(Token.Text, article);
             }
             //Refresh
         }
 
         private void MoinsQt_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.enlever(Token.Text);
+                client.enlever(Token.Text, article);
             }
             //Refresh
         }
@@ -90,6 +100,14 @@ namespace WpFVItrine
             WpFVItrine.Window1 window = new WpFVItrine.Window1(Token.Text);
             this.Close();
             window.ShowDialog();
+        }
+
+        private void Payer_click(object sender, RoutedEventArgs e)
+        {
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.payer(Token.Text);
+            }
         }
     }
 }
