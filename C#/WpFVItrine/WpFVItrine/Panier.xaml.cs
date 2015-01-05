@@ -12,12 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-<<<<<<< HEAD
-//using ClassLibDll;
 using System.Windows.Threading;
-=======
 using ClassLibDll;
->>>>>>> 86fb9b46ad7225069b31efb678109f87bf59262e
 
 namespace WpFVItrine
 {
@@ -44,9 +40,9 @@ namespace WpFVItrine
             }
             Paniers.ItemsSource = ElPanier;
             
-            timer.Interval = new TimeSpan(0, 0, 1);
+            /*timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += ReactOnTime;
-            timer.Start();
+            timer.Start();*/
         }
 
         void ReactOnTime(object sender, EventArgs e)

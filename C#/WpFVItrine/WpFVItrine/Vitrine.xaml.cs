@@ -38,9 +38,9 @@ namespace WpFVItrine
                 ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
             }*/
             ListeProduits.ItemsSource = ListeArticle;
-            timer.Interval = new TimeSpan(0, 0, 1);
+           /* timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += ReactOnTime;
-            timer.Start();
+            timer.Start();*/
         }
 
         void ReactOnTime(object sender, EventArgs e)
