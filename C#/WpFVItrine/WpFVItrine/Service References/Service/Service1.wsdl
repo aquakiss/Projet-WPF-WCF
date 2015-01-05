@@ -38,6 +38,24 @@
   <wsdl:message name="IService1_ElemAddInPani_OutputMessage">
     <wsdl:part name="parameters" element="tns:ElemAddInPaniResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_rajouter_InputMessage">
+    <wsdl:part name="parameters" element="tns:rajouter" />
+  </wsdl:message>
+  <wsdl:message name="IService1_rajouter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rajouterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_enlever_InputMessage">
+    <wsdl:part name="parameters" element="tns:enlever" />
+  </wsdl:message>
+  <wsdl:message name="IService1_enlever_OutputMessage">
+    <wsdl:part name="parameters" element="tns:enleverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retirer_InputMessage">
+    <wsdl:part name="parameters" element="tns:retirer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_retirer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:retirerResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -64,6 +82,18 @@
     <wsdl:operation name="ElemAddInPani">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ElemAddInPani" message="tns:IService1_ElemAddInPani_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ElemAddInPaniResponse" message="tns:IService1_ElemAddInPani_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rajouter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/rajouter" message="tns:IService1_rajouter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/rajouterResponse" message="tns:IService1_rajouter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="enlever">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/enlever" message="tns:IService1_enlever_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/enleverResponse" message="tns:IService1_enlever_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="retirer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/retirer" message="tns:IService1_retirer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/retirerResponse" message="tns:IService1_retirer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -110,6 +140,33 @@
     </wsdl:operation>
     <wsdl:operation name="ElemAddInPani">
       <soap:operation soapAction="http://tempuri.org/IService1/ElemAddInPani" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rajouter">
+      <soap:operation soapAction="http://tempuri.org/IService1/rajouter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enlever">
+      <soap:operation soapAction="http://tempuri.org/IService1/enlever" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retirer">
+      <soap:operation soapAction="http://tempuri.org/IService1/retirer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

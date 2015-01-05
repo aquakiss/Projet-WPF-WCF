@@ -124,19 +124,110 @@ namespace WcfSrvDll
             }
         }
 
-        public void rajouter(string token)
+        public void rajouter(string token, Article article)
         {
-
+            bool find = false;
+            foreach (Panier p in paniers)
+            {
+                if (p.token == token)
+                {
+                    //verifier que le produit est pas déjà dans le panier
+                    foreach (Article a in p.listePanier)
+                    {
+                        if (a.Nom == article.Nom)
+                        {
+                            foreach (Article art in liste)
+                            {
+                                if (a.Nom == art.Nom)
+                                {
+                                    if (art.Quantite > 0)
+                                    {
+                                        art.Quantite--;
+                                        a.Quantite++;
+                                    }
+                                    find = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (find == true)
+                        {
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
         }
 
-        public void enlever(string token)
+        public void enlever(string token, Article article)
         {
-
+            bool find = false;
+            foreach (Panier p in paniers)
+            {
+                if (p.token == token)
+                {
+                    //verifier que le produit est pas déjà dans le panier
+                    foreach (Article a in p.listePanier)
+                    {
+                        if (a.Nom == article.Nom)
+                        {
+                            foreach (Article art in liste)
+                            {
+                                if (a.Nom == art.Nom)
+                                {
+                                    art.Quantite++;
+                                    a.Quantite--;
+                                    if (a.Quantite == 0)
+                                    {
+                                        p.listePanier.Remove(a);
+                                    }
+                                    find = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (find == true)
+                        {
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
         }
 
-        public void retirer(string token)
+        public void retirer(string token, Article article)
         {
-
+            bool find = false;
+            foreach (Panier p in paniers)
+            {
+                if (p.token == token)
+                {
+                    //verifier que le produit est pas déjà dans le panier
+                    foreach (Article a in p.listePanier)
+                    {
+                        if (a.Nom == article.Nom)
+                        {
+                            foreach (Article art in liste)
+                            {
+                                if (a.Nom == art.Nom)
+                                {
+                                    art.Quantite = art.Quantite + a.Quantite;
+                                    p.listePanier.Remove(a);
+                                    find = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (find == true)
+                        {
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

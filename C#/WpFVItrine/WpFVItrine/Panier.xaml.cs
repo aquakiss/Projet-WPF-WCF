@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-//using ClassLibDll;
+using ClassLibDll;
 
 namespace WpFVItrine
 {
@@ -41,27 +41,33 @@ namespace WpFVItrine
 
         private void AjoutPlus_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.rajouter(Token.Text);
+                client.rajouter(Token.Text, article);
             }           
             //Refresh
         }
 
         private void Retirer_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.retirer(Token.Text);
+                client.retirer(Token.Text, article);
             }
             //Refresh
         }
 
         private void MoinsQt_Click(object sender, RoutedEventArgs e)
         {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.enlever(Token.Text);
+                client.enlever(Token.Text, article);
             }
             //Refresh
         }
