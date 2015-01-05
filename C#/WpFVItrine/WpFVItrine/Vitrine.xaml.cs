@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using WpFVItrine.Service;
 using ClassLibDll;
 using System.Windows.Threading;
+using System.Collections.ObjectModel;
 
 namespace WpFVItrine
 {
@@ -24,39 +25,44 @@ namespace WpFVItrine
     {
         
         object[] ListeArticle;
+        public ObservableCollection<object> Vitrin = new ObservableCollection<object>();
+        DispatcherTimer timer = new DispatcherTimer();
         public Window1(string id)
         {
             InitializeComponent();
             Token.Text = id;
 
+            /*using (Service.Service1Client client = new Service.Service1Client())
+            {
+                ListeArticle = client.getListArticle();
+            }
+            ListeProduits.ItemsSource = ListeArticle; ListBox */
+
             using (Service.Service1Client client = new Service.Service1Client())
             {
                 ListeArticle = client.getListArticle();
             }
-            /*foreach (Article produit in ListeArticle)
+            for (int i = 0; i < ListeArticle.Length; i++)
             {
-                ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
-            }*/
-            ListeProduits.ItemsSource = ListeArticle;
-           
+                Vitrin.Add(ListeArticle[i]);
+            }
+            ListeProduits.ItemsSource = Vitrin;
+
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ReactOnTime;
+            timer.Start();
         }
 
         void ReactOnTime(object sender, EventArgs e)
         {
             using (Service.Service1Client mainClient = new Service.Service1Client())
             {
-                /*productTempTab = mainClient.getItems();
-                products.Clear();
-                for (int i = 0; i < productTempTab.Length; i++)
+                ListeArticle = mainClient.getListArticle();
+                Vitrin.Clear();
+                for (int i = 0; i < ListeArticle.Length; i++)
                 {
-                    products.Add(productTempTab[i]);
+                    Vitrin.Add(ListeArticle[i]);
                 }
-                productTempTab = mainClient.getCart(token);
-                cart.Clear();
-                for (int i = 0; i < productTempTab.Length; i++)
-                {
-                    cart.Add(productTempTab[i]);
-                }*/
             }
         }
 
