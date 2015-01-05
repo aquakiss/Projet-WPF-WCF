@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpFVItrine.Service;
 using ClassLibDll;
+using System.Windows.Threading;
 
 namespace WpFVItrine
 {
@@ -21,6 +22,7 @@ namespace WpFVItrine
     /// </summary>
     public partial class Window1 : Window
     {
+        DispatcherTimer timer;
         object[] ListeArticle;
         public Window1(string id)
         {
@@ -36,6 +38,28 @@ namespace WpFVItrine
                 ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
             }*/
             ListeProduits.ItemsSource = ListeArticle;
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ReactOnTime;
+            timer.Start();
+        }
+
+        void ReactOnTime(object sender, EventArgs e)
+        {
+            using (Service.Service1Client mainClient = new Service.Service1Client())
+            {
+                /*productTempTab = mainClient.getItems();
+                products.Clear();
+                for (int i = 0; i < productTempTab.Length; i++)
+                {
+                    products.Add(productTempTab[i]);
+                }
+                productTempTab = mainClient.getCart(token);
+                cart.Clear();
+                for (int i = 0; i < productTempTab.Length; i++)
+                {
+                    cart.Add(productTempTab[i]);
+                }*/
+            }
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

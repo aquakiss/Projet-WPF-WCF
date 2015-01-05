@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClassLibDll;
+using System.Windows.Threading;
 
 namespace WpFVItrine
 {
@@ -30,6 +31,11 @@ namespace WpFVItrine
                 ListeArticle = client.getListArticle();
             }
             ListeProduits.ItemsSource = ListeArticle;
+            /*
+             * timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ReactOnTime;
+            timer.Start();
+             */
         }
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

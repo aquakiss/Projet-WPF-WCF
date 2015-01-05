@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 //using ClassLibDll;
+using System.Windows.Threading;
 
 namespace WpFVItrine
 {
@@ -23,6 +24,7 @@ namespace WpFVItrine
     {
         public ObservableCollection<object> ElPanier = new ObservableCollection<object>();
         object[] Listelem;
+        DispatcherTimer timer;
         public Panier(string tok)
         {
             InitializeComponent();
@@ -37,6 +39,23 @@ namespace WpFVItrine
                 ElPanier.Add(Listelem[i]);
             }
             Paniers.ItemsSource = ElPanier;
+            
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += ReactOnTime;
+            timer.Start();
+        }
+
+        void ReactOnTime(object sender, EventArgs e)
+        {
+            using (Service.Service1Client mainClient = new Service.Service1Client())
+            {
+                Listelem = mainClient.getPanier(Token.Text);
+                ElPanier.Clear();
+                for (int i = 0; i < Listelem.Length; i++)
+                {
+                    ElPanier.Add(Listelem[i]);
+                }
+            }
         }
 
         private void AjoutPlus_Click(object sender, RoutedEventArgs e)
