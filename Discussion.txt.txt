@@ -3,12 +3,22 @@ Ici on met ou on en est.
 - page vitrine 
 - page panier
 - service p co
+- service p vitrine 
+- aff liste article
+- aff article du panier
+- Ajout prod in panier
+- déco (goto accueil) admin et vitrine
+- service getadmin
+- service ajout prod(gere exception)
+- enlever un prod 
+- service supp prod
 
-RESTE :
-liste article /
-ajout au panier
-modifier nb article dans panier
-enlever du panier
-fonction pa panier 
-service p vitrine /
-service p panier 
+RESTE : 
+
+
+-Rafraichissement partout
+
+modifier nb article dans panier /
+enlever du panier /
+fonction pa panier /
+service p panier /

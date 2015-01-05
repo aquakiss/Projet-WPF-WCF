@@ -20,6 +20,18 @@
   <wsdl:message name="IService1_login_OutputMessage">
     <wsdl:part name="parameters" element="tns:loginResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetiDAdm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetiDAdm" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetiDAdm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetiDAdmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AdmAddProd_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdmAddProd" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AdmAddProd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdmAddProdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_getListArticle_InputMessage">
     <wsdl:part name="parameters" element="tns:getListArticle" />
   </wsdl:message>
@@ -38,6 +50,15 @@
   <wsdl:message name="IService1_ElemAddInPani_OutputMessage">
     <wsdl:part name="parameters" element="tns:ElemAddInPaniResponse" />
   </wsdl:message>
+<<<<<<< HEAD
+=======
+  <wsdl:message name="IService1_SuppProdVit_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuppProdVit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SuppProdVit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuppProdVitResponse" />
+  </wsdl:message>
+>>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
   <wsdl:message name="IService1_rajouter_InputMessage">
     <wsdl:part name="parameters" element="tns:rajouter" />
   </wsdl:message>
@@ -71,6 +92,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/login" message="tns:IService1_login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/loginResponse" message="tns:IService1_login_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetiDAdm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetiDAdm" message="tns:IService1_GetiDAdm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetiDAdmResponse" message="tns:IService1_GetiDAdm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdmAddProd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AdmAddProd" message="tns:IService1_AdmAddProd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AdmAddProdResponse" message="tns:IService1_AdmAddProd_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getListArticle">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getListArticle" message="tns:IService1_getListArticle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getListArticleResponse" message="tns:IService1_getListArticle_OutputMessage" />
@@ -83,6 +112,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ElemAddInPani" message="tns:IService1_ElemAddInPani_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ElemAddInPaniResponse" message="tns:IService1_ElemAddInPani_OutputMessage" />
     </wsdl:operation>
+<<<<<<< HEAD
+=======
+    <wsdl:operation name="SuppProdVit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SuppProdVit" message="tns:IService1_SuppProdVit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SuppProdVitResponse" message="tns:IService1_SuppProdVit_OutputMessage" />
+    </wsdl:operation>
+>>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
     <wsdl:operation name="rajouter">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/rajouter" message="tns:IService1_rajouter_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/rajouterResponse" message="tns:IService1_rajouter_OutputMessage" />
@@ -120,6 +156,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetiDAdm">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetiDAdm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdmAddProd">
+      <soap:operation soapAction="http://tempuri.org/IService1/AdmAddProd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getListArticle">
       <soap:operation soapAction="http://tempuri.org/IService1/getListArticle" style="document" />
       <wsdl:input>
@@ -147,6 +201,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+<<<<<<< HEAD
+=======
+    <wsdl:operation name="SuppProdVit">
+      <soap:operation soapAction="http://tempuri.org/IService1/SuppProdVit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+>>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
     <wsdl:operation name="rajouter">
       <soap:operation soapAction="http://tempuri.org/IService1/rajouter" style="document" />
       <wsdl:input>

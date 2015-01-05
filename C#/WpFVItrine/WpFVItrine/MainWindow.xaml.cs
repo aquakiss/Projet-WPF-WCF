@@ -31,13 +31,24 @@ namespace WpFVItrine
             if (Nom.Text != string.Empty && Prenom.Text != string.Empty) 
             {
                 string token;
+                string tokAd;
                 using(Service.Service1Client client = new Service.Service1Client())
                 {
                     token = client.login(Nom.Text, Prenom.Text);
-                } 
-                WpFVItrine.Window1 window = new WpFVItrine.Window1(token);
-                this.Close();
-                window.ShowDialog();
+                    tokAd = client.GetiDAdm();
+                }
+                if(token == tokAd)
+                {
+                    WpFVItrine.PAdmin Pagead = new WpFVItrine.PAdmin(token);
+                    this.Close();
+                    Pagead.ShowDialog();
+                }
+                else
+                {
+                    WpFVItrine.Window1 window = new WpFVItrine.Window1(token);
+                    this.Close();
+                    window.ShowDialog();
+                }
             }
         }
     }

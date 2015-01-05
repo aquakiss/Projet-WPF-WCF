@@ -21,6 +21,12 @@ namespace WcfSrvDll
         string login(string Nom, string Prenom);
 
         [OperationContract]
+        string GetiDAdm();
+
+        [OperationContract]
+        void AdmAddProd(string AdtxBname, string AdtxBprix, string AdtxBquant, string AdtxBdescrip, string AdtxBResu);
+
+        [OperationContract]
         List<Article> getListArticle();
 
         [OperationContract]
@@ -30,7 +36,14 @@ namespace WcfSrvDll
         void ElemAddInPani(Article produit, string id);
 
         [OperationContract]
+<<<<<<< HEAD
         void rajouter(string token, Article article);
+=======
+        void SuppProdVit(Article article);
+
+        [OperationContract]
+        void rajouter(string token);
+>>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
 
         [OperationContract]
         void enlever(string token, Article article);

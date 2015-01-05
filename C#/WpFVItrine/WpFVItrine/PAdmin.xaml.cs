@@ -11,33 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpFVItrine.Service;
 using ClassLibDll;
 
 namespace WpFVItrine
 {
     /// <summary>
-    /// Logique d'interaction pour Window1.xaml
+    /// Logique d'interaction pour PAdmin.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class PAdmin : Window
     {
         object[] ListeArticle;
-        public Window1(string id)
+        public PAdmin(string id)
         {
             InitializeComponent();
             Token.Text = id;
-
             using (Service.Service1Client client = new Service.Service1Client())
             {
                 ListeArticle = client.getListArticle();
             }
-            /*foreach (Article produit in ListeArticle)
-            {
-                ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
-            }*/
             ListeProduits.ItemsSource = ListeArticle;
         }
-
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             using (Service.Service1Client client = new Service.Service1Client())
@@ -46,28 +39,29 @@ namespace WpFVItrine
             }
 
         }
-        private void AddToPanier_Click(object sender, RoutedEventArgs e)
+
+        private void AddArticl_Click(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            Article article = button.DataContext as Article;
             using (Service.Service1Client client = new Service.Service1Client())
             {
-                client.ElemAddInPani(article, Token.Text);
+                 client.AdmAddProd(AdtxBnam.Text, AdtxBpri.Text, AdtxBqt.Text, AdtxBresum.Text, AdtxBResu.Text);
             }
         }
-
-        private void GoToPanier_Click(object sender, RoutedEventArgs e)
-        {
-            WpFVItrine.Panier window = new WpFVItrine.Panier(Token.Text);
-            this.Close();
-            window.ShowDialog();
-        }
-
         private void Deconnect_Click(object sender, RoutedEventArgs e)
         {
             WpFVItrine.MainWindow window = new WpFVItrine.MainWindow();
             this.Close();
             window.ShowDialog();
         }
+        private void SuppProd_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.SuppProdVit(article);
+            }
+        }
+
     }
 }
