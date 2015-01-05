@@ -120,12 +120,17 @@ namespace WpFVItrine.Service {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ElemAddInPani", ReplyAction="http://tempuri.org/IService1/ElemAddInPaniResponse")]
         System.Threading.Tasks.Task ElemAddInPaniAsync(ClassLibDll.Article produit, string id);
         
-<<<<<<< HEAD
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/rajouter", ReplyAction="http://tempuri.org/IService1/rajouterResponse")]
         void rajouter(string token, ClassLibDll.Article article);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/rajouter", ReplyAction="http://tempuri.org/IService1/rajouterResponse")]
         System.Threading.Tasks.Task rajouterAsync(string token, ClassLibDll.Article article);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
+        void SuppProdVit(ClassLibDll.Article article);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
+        System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/enlever", ReplyAction="http://tempuri.org/IService1/enleverResponse")]
         void enlever(string token, ClassLibDll.Article article);
@@ -138,31 +143,12 @@ namespace WpFVItrine.Service {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/retirer", ReplyAction="http://tempuri.org/IService1/retirerResponse")]
         System.Threading.Tasks.Task retirerAsync(string token, ClassLibDll.Article article);
-=======
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
-        void SuppProdVit(ClassLibDll.Article article);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SuppProdVit", ReplyAction="http://tempuri.org/IService1/SuppProdVitResponse")]
-        System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/payer", ReplyAction="http://tempuri.org/IService1/payerResponse")]
+        void payer(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/rajouter", ReplyAction="http://tempuri.org/IService1/rajouterResponse")]
-        void rajouter(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/rajouter", ReplyAction="http://tempuri.org/IService1/rajouterResponse")]
-        System.Threading.Tasks.Task rajouterAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/enlever", ReplyAction="http://tempuri.org/IService1/enleverResponse")]
-        void enlever(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/enlever", ReplyAction="http://tempuri.org/IService1/enleverResponse")]
-        System.Threading.Tasks.Task enleverAsync(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/retirer", ReplyAction="http://tempuri.org/IService1/retirerResponse")]
-        void retirer(string token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/retirer", ReplyAction="http://tempuri.org/IService1/retirerResponse")]
-        System.Threading.Tasks.Task retirerAsync(string token);
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/payer", ReplyAction="http://tempuri.org/IService1/payerResponse")]
+        System.Threading.Tasks.Task payerAsync(string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         WpFVItrine.Service.CompositeType GetDataUsingDataContract(WpFVItrine.Service.CompositeType composite);
@@ -254,13 +240,20 @@ namespace WpFVItrine.Service {
             return base.Channel.ElemAddInPaniAsync(produit, id);
         }
         
-<<<<<<< HEAD
         public void rajouter(string token, ClassLibDll.Article article) {
             base.Channel.rajouter(token, article);
         }
         
         public System.Threading.Tasks.Task rajouterAsync(string token, ClassLibDll.Article article) {
             return base.Channel.rajouterAsync(token, article);
+        }
+        
+        public void SuppProdVit(ClassLibDll.Article article) {
+            base.Channel.SuppProdVit(article);
+        }
+        
+        public System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article) {
+            return base.Channel.SuppProdVitAsync(article);
         }
         
         public void enlever(string token, ClassLibDll.Article article) {
@@ -277,38 +270,14 @@ namespace WpFVItrine.Service {
         
         public System.Threading.Tasks.Task retirerAsync(string token, ClassLibDll.Article article) {
             return base.Channel.retirerAsync(token, article);
-=======
-        public void SuppProdVit(ClassLibDll.Article article) {
-            base.Channel.SuppProdVit(article);
         }
         
-        public System.Threading.Tasks.Task SuppProdVitAsync(ClassLibDll.Article article) {
-            return base.Channel.SuppProdVitAsync(article);
+        public void payer(string token) {
+            base.Channel.payer(token);
         }
         
-        public void rajouter(string token) {
-            base.Channel.rajouter(token);
-        }
-        
-        public System.Threading.Tasks.Task rajouterAsync(string token) {
-            return base.Channel.rajouterAsync(token);
-        }
-        
-        public void enlever(string token) {
-            base.Channel.enlever(token);
-        }
-        
-        public System.Threading.Tasks.Task enleverAsync(string token) {
-            return base.Channel.enleverAsync(token);
-        }
-        
-        public void retirer(string token) {
-            base.Channel.retirer(token);
-        }
-        
-        public System.Threading.Tasks.Task retirerAsync(string token) {
-            return base.Channel.retirerAsync(token);
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        public System.Threading.Tasks.Task payerAsync(string token) {
+            return base.Channel.payerAsync(token);
         }
         
         public WpFVItrine.Service.CompositeType GetDataUsingDataContract(WpFVItrine.Service.CompositeType composite) {

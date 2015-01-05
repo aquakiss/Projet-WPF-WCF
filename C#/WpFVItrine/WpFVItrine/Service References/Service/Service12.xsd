@@ -98,29 +98,11 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-<<<<<<< HEAD
-=======
-  <xs:element name="SuppProdVit">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q4:Article" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SuppProdVitResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
   <xs:element name="rajouter">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
-<<<<<<< HEAD
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q4:Article" />
-=======
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,14 +111,23 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="SuppProdVit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q5:Article" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuppProdVitResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="enlever">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
-<<<<<<< HEAD
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q5:Article" />
-=======
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q6:Article" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -149,10 +140,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
-<<<<<<< HEAD
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q6:Article" />
-=======
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ClassLibDll" minOccurs="0" name="article" nillable="true" type="q7:Article" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -161,25 +149,29 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="payer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="payerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-<<<<<<< HEAD
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="composite" nillable="true" type="q7:CompositeType" />
-=======
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="composite" nillable="true" type="q5:CompositeType" />
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="composite" nillable="true" type="q8:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-<<<<<<< HEAD
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q8:CompositeType" />
-=======
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q6:CompositeType" />
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfSrvDll" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q9:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

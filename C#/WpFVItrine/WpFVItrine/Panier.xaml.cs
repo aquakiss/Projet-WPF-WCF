@@ -78,5 +78,13 @@ namespace WpFVItrine
             this.Close();
             window.ShowDialog();
         }
+
+        private void Payer_click(object sender, RoutedEventArgs e)
+        {
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                client.payer(Token.Text);
+            }
+        }
     }
 }

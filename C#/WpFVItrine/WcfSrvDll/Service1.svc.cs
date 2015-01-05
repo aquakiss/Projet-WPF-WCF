@@ -268,6 +268,17 @@ namespace WcfSrvDll
             }
         }
 
+        public void payer(string token)
+        {
+            foreach (Panier p in paniers)
+            {
+                if (p.token == token)
+                {
+                    p.listePanier.Clear();
+                }
+            }
+        }
+
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)

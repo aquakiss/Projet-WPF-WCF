@@ -50,20 +50,17 @@
   <wsdl:message name="IService1_ElemAddInPani_OutputMessage">
     <wsdl:part name="parameters" element="tns:ElemAddInPaniResponse" />
   </wsdl:message>
-<<<<<<< HEAD
-=======
-  <wsdl:message name="IService1_SuppProdVit_InputMessage">
-    <wsdl:part name="parameters" element="tns:SuppProdVit" />
-  </wsdl:message>
-  <wsdl:message name="IService1_SuppProdVit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SuppProdVitResponse" />
-  </wsdl:message>
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
   <wsdl:message name="IService1_rajouter_InputMessage">
     <wsdl:part name="parameters" element="tns:rajouter" />
   </wsdl:message>
   <wsdl:message name="IService1_rajouter_OutputMessage">
     <wsdl:part name="parameters" element="tns:rajouterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SuppProdVit_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuppProdVit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SuppProdVit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuppProdVitResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_enlever_InputMessage">
     <wsdl:part name="parameters" element="tns:enlever" />
@@ -76,6 +73,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_retirer_OutputMessage">
     <wsdl:part name="parameters" element="tns:retirerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_payer_InputMessage">
+    <wsdl:part name="parameters" element="tns:payer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_payer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:payerResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
@@ -112,16 +115,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ElemAddInPani" message="tns:IService1_ElemAddInPani_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ElemAddInPaniResponse" message="tns:IService1_ElemAddInPani_OutputMessage" />
     </wsdl:operation>
-<<<<<<< HEAD
-=======
-    <wsdl:operation name="SuppProdVit">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SuppProdVit" message="tns:IService1_SuppProdVit_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SuppProdVitResponse" message="tns:IService1_SuppProdVit_OutputMessage" />
-    </wsdl:operation>
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
     <wsdl:operation name="rajouter">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/rajouter" message="tns:IService1_rajouter_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/rajouterResponse" message="tns:IService1_rajouter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuppProdVit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SuppProdVit" message="tns:IService1_SuppProdVit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SuppProdVitResponse" message="tns:IService1_SuppProdVit_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="enlever">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/enlever" message="tns:IService1_enlever_InputMessage" />
@@ -130,6 +130,10 @@
     <wsdl:operation name="retirer">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/retirer" message="tns:IService1_retirer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/retirerResponse" message="tns:IService1_retirer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="payer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/payer" message="tns:IService1_payer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/payerResponse" message="tns:IService1_payer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -201,10 +205,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-<<<<<<< HEAD
-=======
-    <wsdl:operation name="SuppProdVit">
-      <soap:operation soapAction="http://tempuri.org/IService1/SuppProdVit" style="document" />
+    <wsdl:operation name="rajouter">
+      <soap:operation soapAction="http://tempuri.org/IService1/rajouter" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -212,9 +214,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
-    <wsdl:operation name="rajouter">
-      <soap:operation soapAction="http://tempuri.org/IService1/rajouter" style="document" />
+    <wsdl:operation name="SuppProdVit">
+      <soap:operation soapAction="http://tempuri.org/IService1/SuppProdVit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -233,6 +234,15 @@
     </wsdl:operation>
     <wsdl:operation name="retirer">
       <soap:operation soapAction="http://tempuri.org/IService1/retirer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="payer">
+      <soap:operation soapAction="http://tempuri.org/IService1/payer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

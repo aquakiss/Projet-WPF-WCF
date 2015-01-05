@@ -36,20 +36,19 @@ namespace WcfSrvDll
         void ElemAddInPani(Article produit, string id);
 
         [OperationContract]
-<<<<<<< HEAD
         void rajouter(string token, Article article);
-=======
-        void SuppProdVit(Article article);
 
         [OperationContract]
-        void rajouter(string token);
->>>>>>> f09bb85cd3facdde9c7aae77a58347a7eb039b6a
+        void SuppProdVit(Article article);
 
         [OperationContract]
         void enlever(string token, Article article);
 
         [OperationContract]
         void retirer(string token, Article article);
+
+        [OperationContract]
+        void payer(string token);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
