@@ -62,5 +62,12 @@ namespace WpFVItrine
             this.Close();
             window.ShowDialog();
         }
+
+        private void Deconnect_Click(object sender, RoutedEventArgs e)
+        {
+            WpFVItrine.MainWindow window = new WpFVItrine.MainWindow();
+            this.Close();
+            window.ShowDialog();
+        }
     }
 }

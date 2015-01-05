@@ -41,7 +41,7 @@ namespace WcfSrvDll
             {
                 user.Admin = true;
             }
-            if (user.Admin != false)
+            if (user.Admin == false)
             {
                 user.ID = Nom + Prenom;
             }
@@ -63,6 +63,11 @@ namespace WcfSrvDll
             return user.ID;
         }
 
+        public string GetiDAdm()
+        {
+            return "Admin007";
+        }
+
         public List<Article> getListArticle()
         {
             return liste;
@@ -78,6 +83,21 @@ namespace WcfSrvDll
                 }
             }
             return new List<Article>();
+        }
+
+        public void AdmAddProd(string AdtxBname, string AdtxBprix, string AdtxBquant, string AdtxBdescrip, string AdtxBResu)
+        {
+            try
+            {
+                Convert.ToInt32(AdtxBprix);
+                Convert.ToInt32(AdtxBquant);
+            }
+            catch
+            {
+                AdtxBprix = "15";
+                AdtxBquant = "3";
+            }
+            liste.Add(new Article() { Nom = AdtxBname, Prix = Convert.ToInt32(AdtxBprix), Quantite = Convert.ToInt32(AdtxBquant), Description = AdtxBdescrip, Resume = AdtxBResu });
         }
 
         public void ElemAddInPani(Article prod, string id)
@@ -129,6 +149,11 @@ namespace WcfSrvDll
                     break;
                 }
             }
+        }
+
+        public void SuppProdVit(Article article)
+        {
+
         }
 
         public void rajouter(string token)

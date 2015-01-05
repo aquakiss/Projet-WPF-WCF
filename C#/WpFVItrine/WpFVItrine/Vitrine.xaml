@@ -27,7 +27,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="User :" VerticalAlignment="Top" Height="21" Width="39"/>
-        <Button Content="Panier" HorizontalAlignment="Left" Margin="427,0,0,1" Width="81" Click="GoToPanier_Click"/>
+        <Button Content="Panier" HorizontalAlignment="Left" Margin="341,0,0,1" Width="81" Click="GoToPanier_Click"/>
         <TextBlock x:Name="Token"  HorizontalAlignment="Left" Margin="44,2,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="69" Grid.RowSpan="2"/>
+        <Button Content="Déconnection" HorizontalAlignment="Left" Margin="427,0,0,1" Width="81" Click="Deconnect_Click"/>
     </Grid>
 </Window>

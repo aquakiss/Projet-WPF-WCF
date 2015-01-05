@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClassLibDll;
 
 namespace WpFVItrine
 {
@@ -41,15 +42,25 @@ namespace WpFVItrine
 
         private void AddArticl_Click(object sender, RoutedEventArgs e)
         {
-
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                 client.AdmAddProd(AdtxBnam.Text, AdtxBpri.Text, AdtxBqt.Text, AdtxBresum.Text, AdtxBResu.Text);
+            }
         }
         private void Deconnect_Click(object sender, RoutedEventArgs e)
         {
-
+            WpFVItrine.MainWindow window = new WpFVItrine.MainWindow();
+            this.Close();
+            window.ShowDialog();
         }
         private void SuppProd_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = sender as Button;
+            Article article = button.DataContext as Article;
+            using (Service.Service1Client client = new Service.Service1Client())
+            {
+                //client.SuppProdVit(article);
+            }
         }
 
     }

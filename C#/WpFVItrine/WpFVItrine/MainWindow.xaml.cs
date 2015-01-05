@@ -31,11 +31,13 @@ namespace WpFVItrine
             if (Nom.Text != string.Empty && Prenom.Text != string.Empty) 
             {
                 string token;
+                string tokAd;
                 using(Service.Service1Client client = new Service.Service1Client())
                 {
                     token = client.login(Nom.Text, Prenom.Text);
+                    tokAd = client.GetiDAdm();
                 }
-                if(token == "Admin007")
+                if(token == tokAd)
                 {
                     WpFVItrine.PAdmin Pagead = new WpFVItrine.PAdmin(token);
                     this.Close();

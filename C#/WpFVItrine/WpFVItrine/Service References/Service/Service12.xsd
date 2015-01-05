@@ -31,6 +31,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetiDAdm">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetiDAdmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetiDAdmResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdmAddProd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdtxBname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AdtxBprix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AdtxBquant" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AdtxBdescrip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AdtxBResu" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdmAddProdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getListArticle">
     <xs:complexType>
       <xs:sequence />
@@ -66,6 +94,42 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="ElemAddInPaniResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rajouter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rajouterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enlever">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="enleverResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="retirer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="retirerResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

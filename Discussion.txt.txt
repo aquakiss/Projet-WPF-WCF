@@ -7,11 +7,17 @@ Ici on met ou on en est.
 - aff liste article
 - aff article du panier
 - Ajout prod in panier
+- déco (goto accueil) admin et vitrine
+- service getadmin
+- service ajout prod(gere exception)
+
 RESTE :
- 
-ajout au produit /
-enlever un prod /
-déco (goto accueil) /
+*noupi :  
+ajout au produit(manque le refresh) / 
+enlever un prod / 
+service supp prod /
+
+-Rafraichissement partout
 
 modifier nb article dans panier
 enlever du panier
