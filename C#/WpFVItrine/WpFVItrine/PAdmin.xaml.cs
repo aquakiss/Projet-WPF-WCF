@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClassLibDll;
 using System.Windows.Threading;
+using System.Collections.ObjectModel;
 
 namespace WpFVItrine
 {
@@ -22,6 +23,8 @@ namespace WpFVItrine
     public partial class PAdmin : Window
     {
         object[] ListeArticle;
+        public ObservableCollection<object> Vitrin = new ObservableCollection<object>();
+        DispatcherTimer timer = new DispatcherTimer();
         public PAdmin(string id)
         {
             InitializeComponent();
@@ -30,21 +33,37 @@ namespace WpFVItrine
             {
                 ListeArticle = client.getListArticle();
             }
-            ListeProduits.ItemsSource = ListeArticle;
-            /*
-             * timer.Interval = new TimeSpan(0, 0, 1);
+            for (int i = 0; i < ListeArticle.Length; i++)
+            {
+                Vitrin.Add(ListeArticle[i]);
+            }
+            ListeProduits.ItemsSource = Vitrin;
+
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += ReactOnTime;
             timer.Start();
-             */
         }
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        void ReactOnTime(object sender, EventArgs e)
+        {
+            using (Service.Service1Client mainClient = new Service.Service1Client())
+            {
+                ListeArticle = mainClient.getListArticle();
+                Vitrin.Clear();
+                for (int i = 0; i < ListeArticle.Length; i++)
+                {
+                    Vitrin.Add(ListeArticle[i]);
+                }
+            }
+        }
+        /*private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             using (Service.Service1Client client = new Service.Service1Client())
             {
                 ListeArticle = client.getListArticle();
             }
 
-        }
+        }*/
 
         private void AddArticl_Click(object sender, RoutedEventArgs e)
         {

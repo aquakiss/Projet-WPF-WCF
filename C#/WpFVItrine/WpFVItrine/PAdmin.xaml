@@ -9,23 +9,23 @@
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="12*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox x:Name="ListeProduits" HorizontalAlignment="Left" Height="350" Margin="0,4.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="523" SelectionChanged="ListBox_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{x:Static resx:Resource1.Nom}" />
-                        <TextBlock Text="{Binding Path=Nom}" />
-                        <TextBlock Text="{x:Static resx:Resource1.Prix}" />
-                        <TextBlock Text="{Binding Path=Prix}"/>
-                        <TextBlock Text="{x:Static resx:Resource1.Disponibitlite}" />
-                        <TextBlock Text="{Binding Path=Quantite}"/>
-                        <TextBlock Text="{x:Static resx:Resource1.Resume}" />
-                        <TextBlock Text="{Binding Path=Description}" />
-                        <Button Content="Supprimer" Click="SuppProd_Click"></Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="ListeProduits" ItemsSource="{Binding ElPanier}" HorizontalAlignment="Left" Height="350" Margin="0,4.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="523">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nom}" Header="{x:Static resx:Resource1.Nom}" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prix}" Header="{x:Static resx:Resource1.Prix}" Width="70"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Quantite}" Header="{x:Static resx:Resource1.Disponibitlite}" Width="80"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Resume}" Header="{x:Static resx:Resource1.Resume}" Width="60"></GridViewColumn>
+                      <GridViewColumn Header="Retirer un produit" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Supprimer" Click="SuppProd_Click"></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Content="Déconnexion" Grid.Row="0" Margin="426,-2,20,0" Width="81" Click="Deconnect_Click" />
         <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="User :" VerticalAlignment="Top" Height="21" Width="39"/>
         <Button Content="Créer" HorizontalAlignment="Left" Margin="428,10,0,71" Width="81" Click="AddArticl_Click" Grid.Row="1" RenderTransformOrigin="0.556,0.126"/>
