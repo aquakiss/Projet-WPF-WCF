@@ -24,7 +24,7 @@ namespace WpFVItrine
     {
         public ObservableCollection<object> ElPanier = new ObservableCollection<object>();
         object[] Listelem;
-        DispatcherTimer timer;
+        DispatcherTimer timer = new DispatcherTimer();
         public Panier(string tok)
         {
             InitializeComponent();
@@ -40,9 +40,9 @@ namespace WpFVItrine
             }
             Paniers.ItemsSource = ElPanier;
             
-            /*timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += ReactOnTime;
-            timer.Start();*/
+            timer.Start();
         }
 
         void ReactOnTime(object sender, EventArgs e)

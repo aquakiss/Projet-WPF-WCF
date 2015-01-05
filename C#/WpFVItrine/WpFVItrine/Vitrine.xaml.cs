@@ -22,7 +22,7 @@ namespace WpFVItrine
     /// </summary>
     public partial class Window1 : Window
     {
-        DispatcherTimer timer;
+        
         object[] ListeArticle;
         public Window1(string id)
         {
@@ -38,9 +38,7 @@ namespace WpFVItrine
                 ListeProduits.Items.Add(produit.Nom + " " + produit.Prix + "€" + " " + produit.Quantite + " " + produit.Description);
             }*/
             ListeProduits.ItemsSource = ListeArticle;
-           /* timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += ReactOnTime;
-            timer.Start();*/
+           
         }
 
         void ReactOnTime(object sender, EventArgs e)
